@@ -4,7 +4,6 @@ const Post = require('../models/Post')
 const Profile = require('../models/Profile')
 const Flash = require("../utils/Flash")
 const errorFormatter = require('../utils/validationErrorFormatter')
-const { editProfilePostController } = require('./dashboardController')
 
 exports.createPostGetControler = (req, res, next) => {
 
@@ -66,7 +65,7 @@ exports.createPostPostControler = async (req, res, next) => {
             { $push: { 'posts': createdPost } }
         )
         req.flash('success', 'Post Created Successfully')
-        return res.redirect(`/posts/edit/${createdPost._id}`)
+        return res.redirect(`/`)
     } catch (e) {
         next(e)
     }

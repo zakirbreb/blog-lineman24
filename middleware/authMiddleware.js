@@ -35,8 +35,9 @@ exports.isUnAuthenticated = (req, res, next) => {
 exports.isAdmin =  (req, res, next) => {
     
         const  email  = req.user.email
-        const admin = 'test@test.com'
+        const admin = 'zakirbreb@gmail.com'
         const devloper = 'ariful4082@gmail.com'
+        const test = 'test@test.com'
         console.log(email, admin);
         if(email === devloper){
             next()
@@ -44,7 +45,10 @@ exports.isAdmin =  (req, res, next) => {
         } else if (email === admin ) {
             next()
 
-        } else {
+        }else if(email === test){
+            next()
+        }
+         else {
             req.flash('fail', 'Only admin can create post')
             res.redirect('/')
         }

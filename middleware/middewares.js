@@ -8,8 +8,8 @@ const config = require('config')
 const { bindeUserWithRequest } = require('./authMiddleware');
 const setLocals = require('./setLocals')
 
-// const mongoDB_URI = `mongodb+srv://${config.get('db-username')}:${config.get('db-password')}@cluster0.nine7.mongodb.net/exp-blog?retryWrites=true&w=majority`
-const mongoDB_URI = 'mongodb://localhost:27017/exp-blog'
+const mongoDB_URI = `mongodb+srv://${config.get('db-username')}:${config.get('db-password')}@cluster0.yh7sx.mongodb.net/myFirstDatabase?retryWrites=true&w=majority`
+// const mongoDB_URI = 'mongodb://localhost:27017/exp-blog'
 
 const store = new MongoDBStore({
     uri: mongoDB_URI,
